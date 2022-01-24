@@ -40,14 +40,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -DskipTests
       
-      - name: Run Tests
-        run: mvn test
-        env:
-        MYSQL_HOST: '127.0.0.1'
-        MYSQL_PORT: '3306'
-        MYSQL_USERNAME: ${{secrets.USERNAME}}
-        MYSQL_PASSWORD: ${{secrets.USERNAME}}
-        MYSQL_DNAME: ${{secrets.DB}}
+
     
   docker-compose:
     runs-on: ubuntu-latest

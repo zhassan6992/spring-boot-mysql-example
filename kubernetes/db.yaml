@@ -41,7 +41,22 @@ spec:
           ports:
             - containerPort: 3306
           resources: {}
+          volumeMounts:
+          - name:  local-pv
+            mountPath:  /var/lib/mysql
+      volumes:
+      - name:  local-pv
+        persistentVolumeClaim:
+          claimName: local-pv
 
+
+          # volumeMounts:
+          # - mountPath: /var/lib/mysql
+          #     name: local-pv
+          #     volumes:
+          #     - name: local-pv
+          #       persistentVolumeClaim:
+          #         claimName: local-pv
 status: {}
 ---
 apiVersion: v1

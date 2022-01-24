@@ -37,8 +37,16 @@ jobs:
       - name: Run mysql image
         run:  docker run -p 3306:3306 --env MYSQL_ROOT_PASSWORD=${{secrets.USERNAME}} --env MYSQL_DATABASE=${{secrets.DB}} --env MYSQL_USER=${{secrets.USERNAME}}  --env MYSQL_PASSWORD=${{secrets.DB_PASSWORD}} -d mysql:5.7
                 
-      - name: Build and Test with Maven
+      - name: Build with Maven
         run: mvn clean install 
+      - name: Test
+        run: mvn test
+        env:
+          MYSQL_HOST: '127.0.0.1'
+          MYSQL_PORT: '3306'
+          MYSQL_USERNAME: ${{secrets.USERNAME}}
+          MYSQL_PASSWORD: ${{secrets.DB_PASSWORD}}
+          MYSQL_DNAME: ${{secrets.DB}}
         
   push_to_registry:
     name: Push Docker image to Docker Hub

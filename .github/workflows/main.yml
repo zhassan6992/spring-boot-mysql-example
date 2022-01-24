@@ -87,6 +87,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose -f app.yaml up -d
-      - name: Test
-        run: docker run maha-task 
     

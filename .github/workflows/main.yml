@@ -38,7 +38,8 @@ jobs:
         run:  docker run -p 3306:3306 --env MYSQL_ROOT_PASSWORD=${{secrets.USERNAME}} --env MYSQL_DATABASE=${{secrets.DB}} --env MYSQL_USER=${{secrets.USERNAME}}  --env MYSQL_PASSWORD=${{secrets.DB_PASSWORD}} -d mysql:5.7
                 
       - name: Build with Maven
-        run: mvn clean install 
+        run: mvn clean install -DskipTests
+        
       - name: Test
         run: mvn test
         env:

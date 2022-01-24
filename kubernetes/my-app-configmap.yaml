@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-app-configmap
+  namespace: Spring_boot
+data:
+  host: db-service

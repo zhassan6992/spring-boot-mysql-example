@@ -88,5 +88,5 @@ jobs:
       - name: Build the stack
         run: docker-compose -f app.yaml up -d
       - name: Test
-        run: docker run --network container:maha-task maha-task -s --retry 10 --retry-connrefused http://localhost:8080/
+        run: docker run maha-task -s --retry 10 --retry-connrefused http://localhost:8080/
     

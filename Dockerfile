@@ -1,7 +1,6 @@
 FROM maven:latest as mvn
 WORKDIR /maha
 COPY . .
-
 RUN ["mvn","clean","install","-T100","-DskipTests"]
 
 FROM openjdk:latest

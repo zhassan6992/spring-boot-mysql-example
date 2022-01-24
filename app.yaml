@@ -7,7 +7,6 @@ services:
       MYSQL_DATABASE: "test"
       MYSQL_USER: "ziad"
       MYSQL_PASSWORD: "aezakmi"
-
       MYSQL_ROOT_PASSWORD: "aezakmi"
     ports:
 
@@ -22,7 +21,6 @@ services:
       - "db:db"
     environment:
       MYSQL_HOST: "db"
-      MYSQL_PORT: "3306"
       MYSQL_USERNAME: "ziad"
       MYSQL_PASSWORD: "aezakmi"
       MYSQL_DB: "test"

@@ -36,7 +36,7 @@ spec:
                 secretKeyRef:
                   name: mysql-secret
                   key:  username
-          image: zhassan699/maha-task:last
+          image: zhassan699/maha-task:master
           name: my-app
           ports:
             - containerPort: 8080
